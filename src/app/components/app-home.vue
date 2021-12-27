@@ -1,17 +1,15 @@
 <template>
-  <div>欢迎访问宁皓网：）</div>
-  <AppLogo />
-  <AppIcon />
+  <div>欢迎访问宁皓网：）{{ isLoggedIn }}</div>
 </template>
 
 <script>
-import AppLogo from '@/app/components/app-logo.vue';
-import AppIcon from '@/app/components/app-icon.vue';
+import { mapGetters } from 'vuex';
 
 export default {
-  components: {
-    AppLogo,
-    AppIcon,
+  computed: {
+    ...mapGetters({
+      isLoggedIn: 'auth/isLoggedIn',
+    }),
   },
 };
 </script>
