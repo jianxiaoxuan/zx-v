@@ -25,4 +25,6 @@ export default {
 @import './styles/app.css';
 @import './styles/page.css';
 @import './styles/base.css';
+@import './styles/form.css';
+@import './styles/button.css';
 </style>
