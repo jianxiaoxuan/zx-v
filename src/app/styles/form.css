@@ -1,0 +1,29 @@
+.form {
+  margin-bottom: 32px;
+}
+
+.form > .header {
+  margin-bottom: 40px;
+}
+
+.field {
+  font-size: 16px;
+  margin-bottom: 32px;
+}
+
+.field > .input {
+  box-sizing: border-box;
+  padding: 8px 0;
+  margin-bottom: 8px;
+  width: 100%;
+  border: none;
+  outline: none;
+}
+
+.field > .input.text {
+  border-bottom: 1px solid #bfbfbf;
+}
+
+.field > .input.text:focus {
+  border-bottom-color: #000;
+}

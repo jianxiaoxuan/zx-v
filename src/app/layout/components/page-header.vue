@@ -1,7 +1,7 @@
 <template>
   <div class="page-header">
     <div class="container">
-      <div class="header">
+      <div class="header1">
         <div class="ha">只注于宠，呵护于宠。</div>
         <div class="hb">
           <router-link to="/"><AppLogo /></router-link>
