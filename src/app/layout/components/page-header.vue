@@ -3,8 +3,10 @@
     <div class="container">
       <div class="header">
         <div class="ha">只注于宠，呵护于宠。</div>
-        <div class="hb"><AppLogo /></div>
-        <div class="hc">抖音，微信，微博，小红书</div>
+        <div class="hb">
+          <router-link to="/"><AppLogo /></router-link>
+        </div>
+        <div class="hc"><AppMeiti /></div>
       </div>
       <div class="menu">
         首页，产品中心，疾病科普，技术问诊，营销与服务，联系我们
@@ -16,6 +18,7 @@
 <script>
 import { defineComponent } from 'vue';
 import AppLogo from '@/app/components/app-logo.vue';
+import AppMeiti from '@/app/meiti/app-meiti.vue';
 
 export default defineComponent({
   name: 'PageHeader',
@@ -54,6 +57,7 @@ export default defineComponent({
    */
   components: {
     AppLogo,
+    AppMeiti,
   },
 });
 </script>

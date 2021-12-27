@@ -1,12 +1,15 @@
 <template>
-  <div class="page-aside">PageAside</div>
+  <div class="app-meiti-item weibo">
+    <AppIcon name="shutter_speed" color="#5f6368" />
+  </div>
 </template>
 
 <script>
 import { defineComponent } from 'vue';
+import AppIcon from '@/app/components/app-icon.vue';
 
 export default defineComponent({
-  name: 'PageAside',
+  name: 'AppMeitiItemWeibo',
 
   /**
    * 属性
@@ -40,7 +43,9 @@ export default defineComponent({
   /**
    * 使用组件
    */
-  components: {},
+  components: {
+    AppIcon,
+  },
 });
 </script>
 

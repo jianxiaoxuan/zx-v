@@ -1,18 +1,15 @@
 <template>
-  <div class="page">
-    <PageHeader />
-    <div class="page-main">
-      <slot></slot>
-    </div>
+  <div class="app-meiti-item weixin">
+    <AppIcon name="add_a_photo" color="#5f6368" />
   </div>
 </template>
 
 <script>
 import { defineComponent } from 'vue';
-import PageHeader from './components/page-header.vue';
+import AppIcon from '@/app/components/app-icon.vue';
 
 export default defineComponent({
-  name: 'AppLayout',
+  name: 'AppMeitiItemWeixin',
 
   /**
    * 属性
@@ -47,7 +44,7 @@ export default defineComponent({
    * 使用组件
    */
   components: {
-    PageHeader,
+    AppIcon,
   },
 });
 </script>

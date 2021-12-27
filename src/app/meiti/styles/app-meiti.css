@@ -1,0 +1,8 @@
+.app-meiti {
+  display: flex;
+  flex-direction: row;
+}
+
+.app-meiti-item {
+  margin: 0px 8px;
+}
