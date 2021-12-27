@@ -1,20 +1,12 @@
 <template>
-  <div class="page">
-    <PageHeader />
-    <div class="page-main">
-      <slot></slot>
-    </div>
-    <AppNotification />
-  </div>
+  <div class="app-notification">AppNotification</div>
 </template>
 
 <script>
 import { defineComponent } from 'vue';
-import PageHeader from './components/page-header.vue';
-import AppNotification from '@/app/notification/app-notification.vue';
 
 export default defineComponent({
-  name: 'AppLayout',
+  name: 'AppNotification',
 
   /**
    * 属性
@@ -48,11 +40,14 @@ export default defineComponent({
   /**
    * 使用组件
    */
-  components: {
-    PageHeader,
-    AppNotification,
-  },
+  components: {},
 });
 </script>
 
-<style scoped></style>
+<style scoped>
+.app-notification {
+  position: fixed;
+  bottom: 64px;
+  right: 64px;
+}
+</style>

@@ -1,5 +1,5 @@
 <template>
-  <div>欢迎访问宁皓网：）{{ isLoggedIn }}</div>
+  <div>欢迎访问唑下宠物官方网站：）{{ isLoggedIn }}</div>
 </template>
 
 <script>
