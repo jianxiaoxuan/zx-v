@@ -1,6 +1,7 @@
 import { createStore } from 'vuex';
 import { authStoreModule, AuthStoreState } from '../auth/auth.store';
 import { postStoreModule, PostStoreState } from '../post/post.store';
+import { userStoreModule, UserStoreState } from '../user/user.store';
 import { localStorageStorePlugin } from './app.store.plugin';
 import {
   appNotificationStoreModule,
@@ -12,6 +13,7 @@ export interface RootState {
   post: PostStoreState;
   auth: AuthStoreState;
   notification: AppNotificationStoreState;
+  user: UserStoreState;
 }
 
 /**
@@ -26,6 +28,7 @@ const store = createStore({
     post: postStoreModule,
     auth: authStoreModule,
     notification: appNotificationStoreModule,
+    user: userStoreModule,
   },
 
   plugins: [localStorageStorePlugin],
