@@ -1,0 +1,33 @@
+.header {
+  display: grid;
+  grid-template-columns: 2fr 4fr 2fr;
+}
+
+.ha {
+  display: flex;
+  justify-content: center;
+  padding-top: 32px;
+  font-size: 14px;
+  color: #333335;
+}
+
+.hb {
+  display: flex;
+  justify-content: center;
+  padding-top: 16px;
+}
+
+.hc {
+  display: flex;
+  justify-content: center;
+  padding-top: 32px;
+}
+
+.menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 0px;
+  width: 100%;
+  height: 48px;
+}

@@ -1,7 +1,6 @@
 <template>
   <div class="page">
     <PageHeader />
-    <PageAside />
     <div class="page-main">
       <slot></slot>
     </div>
@@ -50,7 +49,6 @@ export default defineComponent({
    */
   components: {
     PageHeader,
-    PageAside,
   },
 });
 </script>
