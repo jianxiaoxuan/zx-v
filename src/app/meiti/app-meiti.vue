@@ -1,5 +1,6 @@
 <template>
   <div class="app-meiti">
+    <AppMeitiItemUser />
     <AppMeitiItem />
     <AppMeitiItemWeixin />
     <AppMeitiItemWeibo />
@@ -11,6 +12,7 @@ import { defineComponent } from 'vue';
 import AppMeitiItem from './components/app-meiti-item-douyin.vue';
 import AppMeitiItemWeixin from './components/app-meiti-item-weixin.vue';
 import AppMeitiItemWeibo from './components/app-meiti-item-weibo.vue';
+import AppMeitiItemUser from './components/app-meiti-item-user.vue';
 
 export default defineComponent({
   name: 'AppMeiti',
@@ -51,6 +53,7 @@ export default defineComponent({
     AppMeitiItem,
     AppMeitiItemWeixin,
     AppMeitiItemWeibo,
+    AppMeitiItemUser,
   },
 });
 </script>

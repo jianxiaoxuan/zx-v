@@ -5,9 +5,11 @@ import { apiHttpClient } from '@/app/app.service';
 export interface User {
   id: number;
   name: string;
+  avatar: number | null;
 }
 
 export interface UserShowStoreState {
+  touchdown: boolean;
   loading: boolean;
   user: User | null;
 }
@@ -22,6 +24,7 @@ export const userShowStoreModule: Module<UserShowStoreState, RootState> = {
    * 数据
    */
   state: {
+    touchdown: false,
     loading: false,
     user: null,
   } as UserShowStoreState,
@@ -30,6 +33,10 @@ export const userShowStoreModule: Module<UserShowStoreState, RootState> = {
    * 获取器
    */
   getters: {
+    touchdown(state) {
+      return state.touchdown;
+    },
+
     loading(state) {
       return state.loading;
     },
@@ -43,11 +50,15 @@ export const userShowStoreModule: Module<UserShowStoreState, RootState> = {
    * 修改器
    */
   mutations: {
+    setTouchdown(state, data) {
+      state.touchdown = data;
+    },
+
     setLoading(state, data) {
       state.loading = data;
     },
 
-    setUser(state, data) {
+    setResponseData(state, data) {
       state.user = data;
     },
   },
@@ -60,8 +71,8 @@ export const userShowStoreModule: Module<UserShowStoreState, RootState> = {
       commit('setLoading', true);
 
       try {
-        const response = await apiHttpClient.get(`/user/${userId}`);
-        commit('setUser', response.data);
+        const response = await apiHttpClient.get(`/users/${userId}`);
+        commit('setResponseData', response.data);
         commit('setLoading', false);
 
         return response;

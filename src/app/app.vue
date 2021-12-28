@@ -26,11 +26,11 @@ export default {
     }
 
     // 当前用户
-    // const userId = getStorage('uid');
+    const userId = getStorage('uid');
 
-    // if (userId) {
-    //   this.getCurrentUser(userId);
-    // }
+    if (userId) {
+      this.getCurrentUser(userId);
+    }
   },
 
   methods: {

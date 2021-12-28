@@ -1,21 +1,15 @@
 <template>
-  <div class="page">
-    <PageHeader />
-    <div class="page-main">
-      <slot></slot>
-    </div>
-    <AppNotification />
+  <div class="app-meiti-item user">
+    <UserAvatar :user="{ id: 1, avatar: 0 }" link="login" />
   </div>
 </template>
 
 <script>
 import { defineComponent } from 'vue';
-import { mapGetters } from 'vuex';
-import PageHeader from './components/page-header.vue';
-import AppNotification from '@/app/notification/app-notification.vue';
+import UserAvatar from '@/user/components/user-avatar.vue';
 
 export default defineComponent({
-  name: 'AppLayout',
+  name: 'AppMeitiItemUser',
 
   /**
    * 属性
@@ -32,11 +26,7 @@ export default defineComponent({
   /**
    * 计算属性
    */
-  computed: {
-    ...mapGetters({
-      currentUser: 'user/currentUser',
-    }),
-  },
+  computed: {},
 
   /**
    * 已创建
@@ -54,8 +44,7 @@ export default defineComponent({
    * 使用组件
    */
   components: {
-    PageHeader,
-    AppNotification,
+    UserAvatar,
   },
 });
 </script>
