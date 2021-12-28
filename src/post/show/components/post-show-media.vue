@@ -1,6 +1,7 @@
 <template>
-  <div class="post-show-media">PostShowMedia</div>
-  <img class="image" :src="post.file" />
+  <div class="post-show-media">
+    <img class="image" :src="post.file.size.large" />
+  </div>
 </template>
 
 <script>

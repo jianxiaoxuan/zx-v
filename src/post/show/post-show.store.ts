@@ -11,6 +11,11 @@ export interface Post {
   user: User;
   file: {
     id: number;
+    size: {
+      thumbnail: string;
+      medium: string;
+      large: string;
+    };
   };
   tags: [
     {
@@ -39,7 +44,9 @@ export const postShowStoreModule: Module<PostShowStoreState, RootState> = {
     },
 
     post(state) {
-      return Object.keys(state.post).length ? state.post : null;
+      return Object.keys(state.post).length
+        ? postFileProcess(state.post)
+        : null;
     },
   },
 
