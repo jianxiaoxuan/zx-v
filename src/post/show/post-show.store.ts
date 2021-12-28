@@ -1,11 +1,22 @@
 import { Module } from 'vuex';
 import { apiHttpClient } from '../../app/app.service';
 import { RootState } from '../../app/app.store';
+import { User } from '../../user/show/user-show.store';
 
 export interface Post {
   id: number;
   title: string;
   content: string;
+  user: User;
+  file: {
+    id: number;
+  };
+  tags: [
+    {
+      id: number;
+      name: string;
+    },
+  ];
 }
 
 export interface PostShowStoreState {
@@ -54,7 +65,9 @@ export const postShowStoreModule: Module<PostShowStoreState, RootState> = {
       } catch (error) {
         commit('setLoading', false);
 
-        throw error.response;
+        const _error = error as any;
+
+        throw _error.response;
       }
     },
   },
