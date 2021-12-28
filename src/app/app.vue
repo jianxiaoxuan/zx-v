@@ -22,8 +22,15 @@ export default {
 
     if (token) {
       this.setToken(token);
-      this.configApiHttpClientAuthHeader(token);
+      this.configSpiHttpClientAuthHeader(token);
     }
+
+    // 当前用户
+    // const userId = getStorage('uid');
+
+    // if (userId) {
+    //   this.getCurrentUser(userId);
+    // }
   },
 
   methods: {
@@ -32,7 +39,8 @@ export default {
     }),
 
     ...mapActions({
-      configApiHttpClientAuthHeader: 'auth/configApiHttpClientAuthHeader',
+      configSpiHttpClientAuthHeader: 'auth/configSpiHttpClientAuthHeader',
+      getCurrentUser: 'user/getCurrentUser',
     }),
   },
 

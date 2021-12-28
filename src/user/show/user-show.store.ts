@@ -3,7 +3,7 @@ import { RootState } from '@/app/app.store';
 import { apiHttpClient } from '@/app/app.service';
 
 export interface User {
-  id: null;
+  id: number;
   name: string;
 }
 

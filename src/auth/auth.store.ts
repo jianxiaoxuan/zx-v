@@ -46,7 +46,7 @@ export const authStoreModule: Module<AuthStoreState, RootState> = {
    * 动作
    */
   actions: {
-    configApiHttpClientAuthHeader(_, data) {
+    configSpiHttpClientAuthHeader(_, data) {
       apiHttpClient.defaults.headers.common['Authorization'] = `Bearer ${data}`;
     },
   },

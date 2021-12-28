@@ -66,9 +66,11 @@ export const authLoginStoreModele: Module<AuthLoginStoreState, RootState> = {
         commit('setLoading', false);
         commit('auth/setToken', response.data.token, { root: true });
 
-        dispatch('configApiHttpClientAuthHeader', response.data.token, {
+        dispatch('auth/configSpiHttpClientAuthHeader', response.data.token, {
           root: true,
         });
+
+        //dispatch('user/getCurrentUser', response.data.id, { root: true });
 
         return response;
       } catch (error) {
