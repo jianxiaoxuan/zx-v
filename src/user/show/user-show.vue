@@ -1,9 +1,15 @@
 <template>
-  <div class="user-show">UserShow {{ userId }}</div>
+  <div class="user-show">
+    <div class="user-show-header">UserShow {{ userId }}</div>
+  </div>
+  <div class="user-show-body">
+    <router-view></router-view>
+  </div>
 </template>
 
 <script>
 import { defineComponent } from 'vue';
+import { mapGetters, mapActions } from 'vuex';
 
 export default defineComponent({
   name: 'UserShow',
@@ -27,19 +33,27 @@ export default defineComponent({
   /**
    * 计算属性
    */
-  computed: {},
+  computed: {
+    ...mapGetters({
+      user: 'user/show/user',
+    }),
+  },
 
   /**
    * 已创建
    */
   created() {
-    //
+    this.getUserById(this.userId);
   },
 
   /**
    * 组件方法
    */
-  methods: {},
+  methods: {
+    ...mapActions({
+      getUserById: 'user/show/getUserById',
+    }),
+  },
 
   /**
    * 使用组件

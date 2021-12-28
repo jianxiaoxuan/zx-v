@@ -1,15 +1,12 @@
 <template>
-  <div class="app-meiti-item user">
-    <UserAvatar :user="{ id: 1, avatar: 0 }" link="login" />
-  </div>
+  <div class="user-posts">UserPosts</div>
 </template>
 
 <script>
 import { defineComponent } from 'vue';
-import UserAvatar from '@/user/components/user-avatar.vue';
 
 export default defineComponent({
-  name: 'AppMeitiItemUser',
+  name: 'UserPosts',
 
   /**
    * 属性
@@ -43,9 +40,7 @@ export default defineComponent({
   /**
    * 使用组件
    */
-  components: {
-    UserAvatar,
-  },
+  components: {},
 });
 </script>
 
