@@ -13,6 +13,11 @@ export const postFileProcess = (post: Post) => {
 
     file = {
       ...file,
+      size: {
+        thumbnail: `${fileBaseUrl}?size=thumbnail`,
+        medium: `${fileBaseUrl}?size=medium`,
+        large: `${fileBaseUrl}?size=large`,
+      },
     };
 
     post = {

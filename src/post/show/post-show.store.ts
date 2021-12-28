@@ -2,6 +2,7 @@ import { Module } from 'vuex';
 import { apiHttpClient } from '../../app/app.service';
 import { RootState } from '../../app/app.store';
 import { User } from '../../user/show/user-show.store';
+import { postFileProcess } from '../post.service';
 
 export interface Post {
   id: number;
