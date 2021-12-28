@@ -1,11 +1,27 @@
 import { Module } from 'vuex';
 import { apiHttpClient } from '../../app/app.service';
 import { RootState } from '../../app/app.store';
-import { PostItem } from '../post.store';
+import { User } from '../../user/show/user-show.store';
+
+export interface PostListItem {
+  id: number;
+  title: string;
+  content: string;
+  user: User;
+  file: {
+    id: number;
+  };
+  tags: [
+    {
+      id: number;
+      name: string;
+    },
+  ];
+}
 
 export interface PostIndexStoreState {
   loading: boolean;
-  posts: Array<PostItem>;
+  posts: Array<PostListItem>;
 }
 
 export const postIndexStoreModule: Module<PostIndexStoreState, RootState> = {
@@ -48,7 +64,9 @@ export const postIndexStoreModule: Module<PostIndexStoreState, RootState> = {
         return response;
       } catch (error) {
         commit('setLoading', false);
-        throw error.response;
+
+        const _error = error as any;
+        throw _error.response;
       }
     },
   },
