@@ -1,7 +1,19 @@
 <template>
-  <div>欢迎访问唑下宠物官方网站：）</div>
+  <component :is="home"></component>
 </template>
 
 <script>
-export default {};
+import PostIndex from '@/post/index/post-index.vue';
+
+export default {
+  data() {
+    return {
+      home: 'PostIndex',
+    };
+  },
+
+  components: {
+    PostIndex,
+  },
+};
 </script>
