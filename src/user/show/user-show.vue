@@ -1,6 +1,8 @@
 <template>
-  <div class="user-show">
-    <div class="user-show-header">UserShow {{ userId }}</div>
+  <div class="user-show" v-if="user">
+    <div class="user-show-header">
+      <UserName :user="user" size="large" />
+    </div>
   </div>
   <div class="user-show-body">
     <router-view></router-view>
@@ -10,6 +12,7 @@
 <script>
 import { defineComponent } from 'vue';
 import { mapGetters, mapActions } from 'vuex';
+import UserName from '@/user/components/user-name.vue';
 
 export default defineComponent({
   name: 'UserShow',
@@ -67,7 +70,9 @@ export default defineComponent({
   /**
    * 使用组件
    */
-  components: {},
+  components: {
+    UserName,
+  },
 });
 </script>
 
